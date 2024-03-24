@@ -20,3 +20,17 @@ func TestUC(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkUpperCase(b *testing.B) {
+	for _, ut := range ucTests {
+		uc := UpperCase(ut.in)
+		if uc != ut.out {
+			b.Errorf("UpperCase(%s) = %s, must be %s", ut.in, uc, ut.out)
+		}
+	}
+}
+
+// test格式
+func TestXxx(t *testing.T) {
+
+}
