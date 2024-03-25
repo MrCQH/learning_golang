@@ -1,9 +1,9 @@
 package main
 
 import (
-	_ "awesomeProject/lib1"
-	_ "awesomeProject/lib2"
 	"fmt"
+	_ "learning_golang/lib1"
+	_ "learning_golang/lib2"
 	"strconv"
 )
 
