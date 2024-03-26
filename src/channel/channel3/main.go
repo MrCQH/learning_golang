@@ -7,8 +7,7 @@ import (
 
 func main() {
 	//test1()
-	//test2()
-
+	test2()
 }
 
 func test2() {
@@ -16,7 +15,8 @@ func test2() {
 	time.Sleep(1e9)
 }
 
-func pump() chan int {
+// 返回一个只读的通道
+func pump() <-chan int {
 	ch := make(chan int)
 	go func() {
 		for i := 0; ; i++ {
@@ -25,7 +25,9 @@ func pump() chan int {
 	}()
 	return ch
 }
-func suck(ch chan int) {
+
+// 返回一个只读的通道
+func suck(ch <-chan int) {
 	go func() {
 		for v := range ch {
 			fmt.Println(v)
