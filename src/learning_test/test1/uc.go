@@ -1,4 +1,4 @@
-package uc
+package test1
 
 import "strings"
 
