@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 type Person struct {
@@ -46,6 +47,14 @@ func (p *Person) String() string {
 func main() {
 	p1 := NewPerson("renzhen", 5555.55)
 	fmt.Println(p1)
-	p1.SetSalary(66666.66)
-	fmt.Println(p1)
+	//p1.SetSalary(66666.66)
+	//fmt.Println(p1)
+	for i := 6666.; i <= 10000; i++ {
+		go func(ix float64) {
+			p1.SetSalary(ix)
+		}(i)
+	}
+	fmt.Println(p1.GetSalary())
+	time.Sleep(5 * time.Second)
+	fmt.Println(p1.GetSalary())
 }
