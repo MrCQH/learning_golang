@@ -57,5 +57,5 @@ func main() {
 	for i := 0; i < 70; i++ {
 		r.AddCoverMsg(strconv.Itoa(i))
 	}
-	fmt.Println(r.GetSeqMsg(0))
+	fmt.Println(r.GetSeqMsg(21))
 }
